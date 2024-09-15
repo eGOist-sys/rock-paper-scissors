@@ -1,1 +1,104 @@
+<script>
+    // 1. defining getComputerChoice()
+    
+        function getComputerChoice() {
+            let choice = Math.floor(Math.random() * 3)
+            if (choice === 0 ){
+             choice = 'ROCK'    
+         } else if (choice === 1) {
+             choice = 'PAPER'     
+         } else if (choice === 2) {
+             choice = 'SCISSORS'     
+         } else {
+             choice = 'oops1'    
+         }
+             return choice
+        }
 
+    
+    // 2. defining getHumanChoice()
+    
+        function getHumanChoice() {
+            let sign = prompt('Choose between Rock Paper and Scissors')
+         if (sign.toUpperCase() === 'ROCK') {
+            choice1 = 'ROCK'
+          }
+          else if (sign.toUpperCase() === 'PAPER') {
+            choice1 = 'PAPER' }
+         else if (sign.toUpperCase() === 'SCISSORS') {
+            choice1 = 'SCISSORS'
+         }
+         else {
+          choice1 = prompt('Enter your response again').toUpperCase()}
+            return choice1
+        }
+       
+    // 3. setting indivudual scores to 0
+        
+        humanScore = 0;
+        computerScore = 0;
+    
+    // 4. defining playGame function
+        function playGame() {
+            // 5. defining playRound function
+    
+         function playRound() {
+             const humanChoice = getHumanChoice() 
+             const computerChoice = getComputerChoice()
+             if (humanChoice === 'ROCK' && computerChoice === 'PAPER') {
+                computerScore ++    
+                return 'You lose! Paper beats Rock!'   
+                 } 
+             else if (humanChoice === 'ROCK' && computerChoice === 'SCISSORS') {
+                humanScore ++
+                 return 'You win! Rock beats Scissors!'
+                  }
+             else if (humanChoice === 'ROCK' && computerChoice === 'ROCK') {
+                 return "it's a draw!"
+                 }
+                else if (humanChoice === 'SCISSORS' && computerChoice === 'ROCK') {
+                    computerScore ++
+                 return 'You lose! Rock beats Scissors'
+                    }
+             else if (humanChoice === 'SCISSORS' && computerChoice === 'PAPER') {
+                 humanScore ++
+                 return 'You win! Scissors beats Paper'
+                    }
+             else if (humanChoice === 'SCISSORS' && computerChoice === 'SCISSORS') {
+                    return "it's a draw!"
+                 }
+             else if (humanChoice === 'PAPER' && computerChoice === 'SCISSORS') {
+                 computerScore ++
+                 return 'You lose! Scissors beats Paper'
+                 }
+             else if (humanChoice === 'PAPER' && computerChoice === 'ROCK') {
+                 humanScore ++
+                 return 'You Win! Scissors beats Rock'
+                 }
+                else if (humanChoice === 'PAPER' && computerChoice === 'PAPER') {
+                    return "it's a draw!"
+                }
+                else {
+             console.log('oops2') }
+              }
+
+         
+         let roundCount = 0;
+         while (roundCount < 5) {
+         playRound()
+         roundCount ++ ;
+         }
+   
+     }
+    playGame()
+    console.log(`Score:\nYou: ${humanScore} Computer: ${computerScore}`);
+    if (humanScore > computerScore) {
+        console.log('You win!')
+    }
+    else if (humanScore < computerScore) {
+        console.log('You lose!')
+    }
+    else {
+        console.log("It's a draw!")
+    }
+    </script>
