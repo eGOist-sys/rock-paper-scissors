@@ -47,36 +47,36 @@
              const computerChoice = getComputerChoice()
              if (humanChoice === 'ROCK' && computerChoice === 'PAPER') {
                 computerScore ++    
-                return 'You lose! Paper beats Rock!'   
+                console.log( 'You lose! Paper beats Rock!' )  
                  } 
              else if (humanChoice === 'ROCK' && computerChoice === 'SCISSORS') {
                 humanScore ++
-                 return 'You win! Rock beats Scissors!'
+                 console.log('You win! Rock beats Scissors!') 
                   }
              else if (humanChoice === 'ROCK' && computerChoice === 'ROCK') {
-                 return "it's a draw!"
+                 console.log("it's a draw!")
                  }
                 else if (humanChoice === 'SCISSORS' && computerChoice === 'ROCK') {
                     computerScore ++
-                 return 'You lose! Rock beats Scissors'
+                 console.log( 'You lose! Rock beats Scissors')
                     }
              else if (humanChoice === 'SCISSORS' && computerChoice === 'PAPER') {
                  humanScore ++
-                 return 'You win! Scissors beats Paper'
+                 console.log('You win! Scissors beats Paper')
                     }
              else if (humanChoice === 'SCISSORS' && computerChoice === 'SCISSORS') {
-                    return "it's a draw!"
+                    cpnsol.log("it's a draw!")
                  }
              else if (humanChoice === 'PAPER' && computerChoice === 'SCISSORS') {
                  computerScore ++
-                 return 'You lose! Scissors beats Paper'
+                 console.log('You lose! Scissors beats Paper')
                  }
              else if (humanChoice === 'PAPER' && computerChoice === 'ROCK') {
                  humanScore ++
-                 return 'You Win! Scissors beats Rock'
+                 console.log('You Win! Scissors beats Rock')
                  }
                 else if (humanChoice === 'PAPER' && computerChoice === 'PAPER') {
-                    return "it's a draw!"
+                    return console.log("it's a draw!")
                 }
                 else {
              console.log('oops2') }
